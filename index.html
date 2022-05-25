@@ -365,6 +365,32 @@ span.title {
   width: 320px;
   max-width: 50vw;
 }
+#aboutme {
+  margin-top: 5px;
+  margin-bottom: 100px;
+  background: black;
+  color: white;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+.imgs{
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  max-width: 50vw;
+  margin: auto auto;
+  display: block;
+}
+/* .imgs:hover{
+  cursor: pointer;
+} */
+button{
+  width: 100px;
+  padding: 7px;
+  outline: none;
+  cursor: pointer;
+  margin: 13 px 40%;
+}
 </style>
 </head>
 <body>
@@ -549,16 +575,24 @@ span.title {
       </div>
       <div class="signature clickable">
         <p>Another by</p>
-        <a href="https://www.facebook.com/kkongpobb/">
-          <img src="https://scontent-kut2-2.xx.fbcdn.net/v/t39.30808-6/279155424_2185379521610016_1241053291904330939_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEJbbVegTJhqLMfJ0EBsQoubnyz-Xx1KbFufLP5fHUpsZbYDP_mny8ZBHhERPSiHu6Kg657JU5Kmr1A9IpbLR_K&_nc_ohc=7MoK4TMDxeIAX-efOjn&tn=fjzihhuCGTvxSwZq&_nc_ht=scontent-kut2-2.xx&oh=00_AT8VHSxK8X9nTN_Q6ogMchTl2xjW7i2D_mO8O3HWRTFAiA&oe=629378EC">
+          <div class="imgs">
+          <img id="image1" src="https://scontent-kut2-2.xx.fbcdn.net/v/t39.30808-6/279155424_2185379521610016_1241053291904330939_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEJbbVegTJhqLMfJ0EBsQoubnyz-Xx1KbFufLP5fHUpsZbYDP_mny8ZBHhERPSiHu6Kg657JU5Kmr1A9IpbLR_K&_nc_ohc=7MoK4TMDxeIAX-efOjn&tn=fjzihhuCGTvxSwZq&_nc_ht=scontent-kut2-2.xx&oh=00_AT8VHSxK8X9nTN_Q6ogMchTl2xjW7i2D_mO8O3HWRTFAiA&oe=629378EC" onclick="changeImage()">
+          <br /> 
+          <button onclick="btn()"> Next &#8594 </button>
+        </div>
         </a>
       </div>
     </div>
   </div>
 </div>
   <script>
-
+    function btn(){
+      let image = document.getElementById('image1');
+      let images = ['https://avatars.githubusercontent.com/u/81680997?s=400&u=ed7cae600405403aaf1c4f7120dc80c8a6b06ffe&v=4', 'https://media.discordapp.net/attachments/932970063718387763/979116417012072519/unknown.png?width=595&height=670',
+      'https://media.discordapp.net/attachments/932970063718387763/979116561967247400/unknown.png?width=658&height=671'];
+      let random = Math.floor(Math.random() * 3);
+      image.src = images[random];
+    }
   </script>
-
-</body>
+</a>
 </html>
