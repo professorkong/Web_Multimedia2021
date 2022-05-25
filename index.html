@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css'>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+i {
+  display: inline;
+}
+
+.fa {
+  font-size: calc(1em + 3vw);
+  padding: .15em .2em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .4);
+  margin: 0 .25em;
+  box-shadow: .1em .1em .1em rgba(0, 0, 0, 0);
+  transition: all .5s ease;
+}
+
+.fa-twitter {
+  color: #4099FF;
+  transition: all .5s ease;
+}
+
+.fa-twitter:hover {
+  color: white;
+  background: #4099FF;
+  transition: all .5s ease;
+}
+
+.fa-github {
+  color: #333;
+}
+
+.fa-github:hover {
+  color: white;
+  background: #333;
+  transition: all .5s ease;
+}
+
+.fa-dribbble {
+  color: #ea4c89;
+}
+
+.fa-dribbble:hover {
+  color: white;
+  background: #ea4c89;
+  transition: all .5s ease;
+}
+
+.fa-codepen {
+  color: black;
+}
+
+.fa-codepen:hover {
+  color: white;
+  background: black;
+  transition: all .5s ease;
+}
+
+.fa-stack-overflow {
+  color: #fe7a15;
+}
+
+.fa-stack-overflow:hover {
+  color: white;
+  background: #15fe4b;
+  transition: all .5s ease;
+}
+
+.devicons {
+  font-size: 4em;
+  color: #000;
+  margin: 0 .25em;
+}
+
+.devicons-html5 {
+  color: #E34C26;
+}
+
+.devicons-css3 {
+  color: #0b73b8;
+}
+
+.devicons-bootstrap {
+  color: #401F7C;
+}
+
+.devicons-wordpress {
+  color: #21759b;
+}
+
+.devicons-javascript {
+  background: #f0db4f;
+}
+
+.devicons-jquery {
+  color: #0769AD;
+}
+
+.devicons-angular {
+  color: #e62a39;
+}
+
+.devicons-nodejs {
+  color: #8CC84B;
+  font-size: 8em;
+}
+
+.devicons-npm {
+  color: #cb3837;
+}
+
+.devicons-sublime {
+  color: #ff8100;
+}
+
+.devicons-cloud9 {
+  color: #237cc5;
+}
+
+.devicons-vim {
+  color: #019833;
+}
+
+.devicons-heroku {
+  color: #6567a5;
+}
+
+.devicons-git {
+  color: #ee513b;
+}
+
+.devicons-react {
+  color: #61dafb;
+  border-radius: 50%;
+  background: #111;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  transform-style: preserve-3d;
+  background-color: #000;
+}
+
+.page-wrap {
+  margin: 0;
+  padding: 0;
+  perspective: 1px;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: 'avenir next', avenir,
+               helvetica, 'helvetica neue',
+               arial, sans-serif;
+  color: black;
+  background: none;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}.clickable {
+  transform: translateZ(0);
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+a {
+  color: rgb(222, 68, 21);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(0, 116, 217);
+}
+
+.screen-reader-text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+#headshot {
+  width: 220px;
+  padding: .5em;
+  margin-bottom: -3em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .4);
+  box-shadow: .5em .5em .5em rgba(0, 0, 0, .4);
+}
+
+.content {
+  width: 80vw;
+  max-width: 45em;
+  padding: 1.5em 2em;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, .75);
+  box-shadow: .5em .5em .5em rgba(0, 0, 0, .4);
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.card {
+  position: relative;
+  padding: 25vh 15px 25vh 2px;
+  min-height: 100%;
+  max-width: 100vw;
+  transform-style: inherit;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card,
+.card:before {
+  background: 50% 50% / cover;
+}
+
+#card1 {
+  background: linear-gradient(rgba(0, 116, 217, .75), rgba(222, 68, 21, .85)), url(https://www.it.kmitl.ac.th/wp-content/themes/itkmitl2017wp/img/life/life-13.jpg) center/cover;
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+}
+
+#card2 {
+  background-color: black;
+  background-image: 
+    radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px), 
+    radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px), 
+    radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px), 
+    radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
+  background-size: 
+    550px 550px, 
+    350px 350px, 
+    250px 250px, 
+    150px 150px;
+  background-position: 
+    0 0, 
+    40px 60px, 
+    130px 270px, 
+    70px 100px;
+  margin: 20em 0 35em 0;
+}
+
+#card3 {
+  background-color: #269;
+  background-image: 
+    linear-gradient(white 2px, transparent 2px), 
+    linear-gradient(90deg, white 2px, transparent 2px), 
+    linear-gradient(rgba(255, 255, 255, .3) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(255, 255, 255, .3) 1px, transparent 1px);
+  background-size: 
+    100px 100px, 
+    100px 100px, 
+    20px 20px, 
+    20px 20px;
+  background-position: 
+    -2px -2px, 
+    -2px -2px, 
+    -1px -1px, 
+    -1px -1px;
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+}
+
+#card4 {
+  background: url(//lh3.googleusercontent.com/DvtKuq7I2VfPS-bTXNM3KY5eEvsm5SbjvTszJR0lWs9u=w1377-h914-no) center/cover;
+  margin-top: 35em;
+}
+
+.app-block {
+  flex-flow: row wrap;
+}
+
+.app {
+  width: 300px;
+  height: 225px; 
+  max-width: 50vw;
+  margin: .5em;
+  box-shadow: .3em .3em .3em rgba(0, 0, 0, .4);
+  border: .25em solid white;
+  display: inline-block;
+}
+
+span.title {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+}
+
+span.title span {
+  width: 295px;
+  height: 218px;
+  max-width: calc(50vw - 8px);
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.app span.title:hover {
+  opacity: 1;
+}
+
+span.title {
+  background: rgba(0,0,0,0.5);
+  font-size: 1.6em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: table;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.signature {
+  text-align: center;
+  margin-top: 3.5em;
+}
+
+.signature p {
+  color: #666;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: .2em;
+  margin: 0;
+  padding: 0;
+}
+
+.signature img {
+  width: 320px;
+  max-width: 50vw;
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+  <div id="card1" class="card">
+    <div class="center">
+      <img id="headshot" src="https://avatars.githubusercontent.com/u/81680997?s=400&u=ed7cae600405403aaf1c4f7120dc80c8a6b06ffe&v=4">
+    </div>
+    <div class="content">
+      <h1>ก้องภพ อ่อนทอง 64070004 </h1>
+      <p class="clickable">นักศึกษาคณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง </p>
+      <p class="clickable">ตลอดระยะเวลา 1 เทอมในวิชามัลติมีเดีย ผมไม่เคยเขียนเว็บไซต์มาก่อน จนได้มาเริ่มลงมือทำในวิชานี้ ทำให้ผมได้รับประสบการณ์ใหม่ ๆ และเจอมิตรภาพใหม่ ๆ ตลอดระยะเวลา
+        ได้คิด ได้ฝึกฝน ได้เรียนรู้สิ่งใหม่ ๆ ที่ไม่เคยได้รับจากที่ไหนมาก่อน จากตอนแรกคิดว่าการทำเว็บไซต์เป็นเรื่องที่ยาก,ซับซ้อน แต่เมื่อได้ลองทำไปเรื่อย ๆ ก็พบว่ามันไม่ยากอย่างที่คิดไว้
+        รวมไปถึงทุกเรื่องในวิชานี้ หลาย ๆ เรื่องถือเป็นเรื่องใหม่ที่ผมไม่เคยเจอมาก่อน ในฐานะที่ผมเป็นคนไม่เก่งจึงต้องใช้เวลาเรียนรู้และฝึกฝนเยอะกว่าเพื่อนคนอื่น ๆ ถึงจะเข้าใจในเรื่องบางเรื่องที่ซับซ้อน
+        
+        ขอขอบคุณพี่จาบอน อาจารย์ เพื่อน ๆ พี่ ๆ TA ทุกคนที่คอยสอนเรื่องที่ไม่เคยรู้มาก่อน ทำให้เป็นแรงบันดาลใจให้เกิดความอยากรู้ รวมถึงเนื้อหาในวิชาเช่น เรื่องสี (HEX, RGB, HSL), CSS calc(), Vector Graphics, 
+        Bitmapped, Sound, Video, Text และเรื่องอื่น ๆ อีกมากมาย
+        สุดท้ายนี้ ขอบคุณวิชามัลติมีเดียที่ทำให้พบ
+        เพื่อนใหม่ ๆ และ ความรู้ใหม่ ๆ กับวิธีการเรียนรู้ที่ไม่ซ้ำใคร ไม่เคยมีที่ไหนมาก่อนครับ</p>
+      
+      <h2>Social profiles</h2>
+      <div class="icon-block center clickable">
+        <a href="https://twitter.com/ohnoooooooooo_" target="_blank">
+          <i class="fa fa-twitter">
+            <span class="screen-reader-text">Twitter</span>
+          </i>
+        </a>
+        <a href="https://github.com/professorkong" target="_blank">
+          <i class="fa fa-github">
+            <span class="screen-reader-text">Github</span>
+          </i>
+        </a>
+        <a href="https://www.instagram.com/1404_k/" target="_blank">
+          <i class="fa fa-instagram">
+            <span class="screen-reader-text">Dribbble</span>
+          </i>
+        </a>
+        <a href="https://codepen.io/bptpfuoc-the-reactor" target="_blank">
+          <i class="fa fa-codepen">
+            <span class="screen-reader-text">Codepen</span>
+          </i>
+        </a>
+        <a href="https://www.facebook.com/kkongpobb/" target="_blank">
+          <i class="fa fa-facebook-square">
+            <span class="screen-reader-text">Stack Overflow</span>
+          </i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="card2" class="card">
+    <div class="content">
+      <h1>โปรเจกต์ที่เคยร่วมงาน</h1>
+      <p>เป็นโปรเจกต์ที่เคยทำร่วมกับเพื่อนในคณะเทคโนโลยีสารสนเทศ</p>
+      <div class="app-block center clickable">
+        <a href="http://compro.pongphun.com" target="_blank">
+          <div class="app" style="background: url(https://media.discordapp.net/attachments/932970063718387763/979083460230664252/unknown.png?width=761&height=670) center; background-size: cover;">
+          <span class="title"><span>Car Reverse Sensor</span>
+          </span>
+          </div>
+        </a>
+        <a href="https://photoretouch.herokuapp.com/" target="_blank">
+          <div class="app" style="background: url(https://cdn.discordapp.com/attachments/932970063718387763/979084357304213565/unknown.png) center; background-size: cover;">
+          <span class="title"><span>แอพพลิเคชั่นลบสิว</span>
+          </span>
+          </div>
+        </a>
+        <a href="https://youtu.be/9eW6wa6ciHY" target="_blank">
+          <div class="app" style="background: url(https://media.discordapp.net/attachments/932970063718387763/979086985509629992/unknown.png?width=885&height=670) center; background-size: cover;">
+          <span class="title"><span>Specifications Core 2 duo</span>
+          </span>
+          </div>
+        </a>
+        <a href="https://apollo-multi.netlify.app/" target="_blank">
+          <div class="app" style="background: url(https://cdn.discordapp.com/attachments/932970063718387763/979088086191460362/unknown.png) center; background-size: cover;">
+          <span class="title"><span>Apollo program</span>
+          </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="card3" class="card">
+    <div class="content">
+      <h1>เพลงที่ชอบฟังเวลาเหงา</h1>
+      <div class="app-block center clickable">
+        <a href="https://www.youtube.com/watch?v=OPUwzzYXgv0&ab_channel=TattooColour-Topic" target="_blank">
+          <div class="app" style="background: url(https://media.discordapp.net/attachments/932970063718387763/979091159899062382/unknown.png?width=653&height=669) center; background-size: cover;">
+          <span class="title"><span>โกหก</span>
+          </span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=83b1mDE0x4A&ab_channel=Zeal-Topic" target="_blank">
+          <div class="app" style="background: url(https://cdn.discordapp.com/attachments/932970063718387763/979091426589683783/unknown.png) center; background-size: cover;">
+          <span class="title"><span>พบเพื่อเพียงผ่าน</span>
+          </span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=JmQ95FAWNq4&ab_channel=%E0%B9%80%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%A1-Topic" target="_blank">
+          <div class="app" style="background: url(https://cdn.discordapp.com/attachments/932970063718387763/979091916174024704/unknown.png) center; background-size: cover;">
+          <span class="title"><span>โจทย์รัก</span>
+          </span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=Q2vqvjP_WB0&ab_channel=Mild-Topic" target="_blank">
+          <div class="app" style="background: url(https://media.discordapp.net/attachments/932970063718387763/979092458992443402/unknown.png?width=834&height=670) center; background-size: cover;">
+          <span class="title"><span>Unlovable</span>
+          </span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=EcWbjxuYncA&ab_channel=BoyPeacemaker-Topic" target="_blank">
+          <div class="app" style="background: url(https://cdn.discordapp.com/attachments/932970063718387763/979092729793482872/unknown.png) center; background-size: cover;">
+          <span class="title"><span>ความอ่อนแอ</span>
+          </span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=mk7VKFJgbzo&ab_channel=Hyper-Topic" target="_blank">
+          <div class="app" style="background: url(https://cdn.discordapp.com/attachments/932970063718387763/979093168572211211/unknown.png) center; background-size: cover;">
+          <span class="title"><span>รักแท้ในคืนหลอกลวง</span>
+          </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="card4" class="card">
+    <div class="content">
+      <h1>เทคโนโลยีที่กำลังสนใจ</h1>
+      <p>เทคโนโลยีเหล่านี้เป็นสิ่งที่ผมสนใจ และ ต้องการศึกษาเพิ่มเติมเพื่อนำไปใช้ในการทำงาน</p>
+      <div class="app-block center">
+        <i class="devicons devicons-html5" title="HTML5">
+        <span class="screen-reader-text">HTML5</span>
+      </i>
+        <i class="devicons devicons-markdown" title="Markdown">
+          <span class="screen-reader-text">Markdown</span>
+      </i>
+        <i class="devicons devicons-css3" title="CSS3">
+          <span class="screen-reader-text">CSS3</span>
+        </i>
+        <i class="devicons devicons-bootstrap" title="Bootstrap">
+          <span class="screen-reader-text">Bootstrap framework</span>
+        </i>
+        <i class="devicons devicons-wordpress" title="Wordpress">
+          <span class="screen-reader-text">Wordpress CMS</span>
+        </i>
+        <i class="devicons devicons-javascript" title="JavaScript">
+          <span class="screen-reader-text">JavaScript</span>
+        </i>
+        <i class="devicons devicons-jquery" title="jQuery">
+          <span class="screen-reader-text">jQuery</span>
+        </i>
+        <i class="devicons devicons-react" title="React">
+          <span class="screen-reader-text">React JS</span>
+        </i>
+        <i class="devicons devicons-angular" title="AngularJS">
+          <span class="screen-reader-text">AngularJS</span>
+        </i>
+        <i class="devicons devicons-nodejs" title="Node.js">
+          <span class="screen-reader-text">Node.js</span>
+        </i>
+        <i class="devicons devicons-npm" title="NPM">
+          <span class="screen-reader-text">NPM, the Node Packet Manager</span>
+        </i>
+        <i class="devicons devicons-sublime" title="Sublime Text 3">
+          <span class="screen-reader-text">Sublime Text 3</span>
+        </i>
+        <i class="devicons devicons-cloud9" title="Cloud9">
+          <span class="screen-reader-text">Cloud9 IDE</span>
+        </i>
+        <i class="devicons devicons-terminal" title="command line">
+          <span class="screen-reader-text">the command line</span>
+        </i>
+        <i class="devicons devicons-git" title="GIT">
+          <span class="screen-reader-text">GIT version control</span>
+        </i>
+        <i class="devicons devicons-vim" title="Vim">
+          <span class="screen-reader-text">Vim text editor</span>
+        </i>
+        <i class="devicons devicons-heroku" title="Heroku">
+          <span class="screen-reader-text">Heroku app deployment</span>
+        </i>
+      </div>
+      <div class="signature clickable">
+        <p>Another by</p>
+        <a href="https://www.facebook.com/kkongpobb/">
+          <img src="https://scontent-kut2-2.xx.fbcdn.net/v/t39.30808-6/279155424_2185379521610016_1241053291904330939_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEJbbVegTJhqLMfJ0EBsQoubnyz-Xx1KbFufLP5fHUpsZbYDP_mny8ZBHhERPSiHu6Kg657JU5Kmr1A9IpbLR_K&_nc_ohc=7MoK4TMDxeIAX-efOjn&tn=fjzihhuCGTvxSwZq&_nc_ht=scontent-kut2-2.xx&oh=00_AT8VHSxK8X9nTN_Q6ogMchTl2xjW7i2D_mO8O3HWRTFAiA&oe=629378EC">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+
+  </script>
+
+</body>
+</html>
