@@ -212,6 +212,7 @@ a:hover {
   border-radius: 50%;
   background: rgba(255, 255, 255, .4);
   box-shadow: .5em .5em .5em rgba(0, 0, 0, .4);
+  animation: textHidden .5s .5s ease;
 }
 
 .content {
@@ -222,6 +223,7 @@ a:hover {
   background: rgba(255, 255, 255, .75);
   box-shadow: .5em .5em .5em rgba(0, 0, 0, .4);
   font-family: 'Chakra Petch', sans-serif;
+  animation: textHidden 1s .6s ease;
 }
 
 .card {
@@ -381,9 +383,7 @@ span.title {
   margin: auto auto;
   display: block;
 }
-/* .imgs:hover{
-  cursor: pointer;
-} */
+
 button{
   width: 100px;
   padding: 7px;
@@ -391,6 +391,15 @@ button{
   cursor: pointer;
   margin: 13 px 40%;
 }
+@keyframes textHidden {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 </style>
 </head>
 <body>
